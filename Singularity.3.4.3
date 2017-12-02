@@ -61,6 +61,7 @@ IncludeCmd: no
                  zlib zlib-devel
 
   cd /tmp/${R_VERSION}
+  dbus-uuidgen >/etc/machine-id
   source /opt/rh/devtoolset-7/enable
   ./configure --enable-R-shlib
   make -j4
