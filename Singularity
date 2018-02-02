@@ -51,7 +51,7 @@ IncludeCmd: no
                  m4 \
                  make \
                  ncurses-devel \
-                 openssl-devel
+                 openssl-devel \
                  pcre pcre-devel \
                  readline-devel \
                  tcl-devel \
