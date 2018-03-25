@@ -21,7 +21,7 @@ IncludeCmd: no
 %post
   export LC_ALL=en_US.UTF-8
   export LANG=en_US.UTF-8
-  export R_VERSION="R-3.4.3"
+  export R_VERSION="R-3.4.4"
   yum update -y
   cd /tmp
   curl -O http://ftp.ussg.iu.edu/CRAN/src/base/R-3/${R_VERSION}.tar.gz
