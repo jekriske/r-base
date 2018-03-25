@@ -8,6 +8,8 @@ IncludeCmd: no
   R_Version 3.4.4
 
 %environment
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 %apprun R
   exec R "$@"
@@ -69,13 +71,16 @@ IncludeCmd: no
                  wget \
                  which \
                  xdg-utils \
-                 xorg-x11-devel \
                  xorg-x11-fonts-ISO* \
                  xz xz-devel \
                  zlib zlib-devel
-
+  echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
+      && locale-gen en_US.utf8 \
+      && /usr/sbin/update-locale LANG=en_US.UTF-8
+  echo "Etc/UTC" /etc/timezone
   cd /tmp/${R_VERSION}
   dbus-uuidgen >/etc/machine-id
+  rm /usr/bin/timedatectl
   ./configure --enable-R-shlib
   make -j4
   make install
